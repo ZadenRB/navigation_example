@@ -4,9 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:navigation_example/bloc/connection_bloc.dart';
 import 'package:navigation_example/bloc/connection_event.dart';
 
-import '../router.dart';
-
 class InstructionsScreen extends StatelessWidget {
+  static Route route() {
+    return MaterialPageRoute(
+      builder: (_) => InstructionsScreen(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) => Container(
       margin: EdgeInsets.symmetric(vertical: 50),
@@ -20,7 +24,6 @@ class InstructionsScreen extends StatelessWidget {
             onPressed: () {
               BlocProvider.of<ConnectionBloc>(context)
                   .add(ConnectionEvent.reconnect);
-              Navigator.pushReplacementNamed(context, Router.mainScreen);
             }),
       ]));
 }

@@ -11,7 +11,7 @@ class ConnectionBloc extends Bloc<ConnectionEvent, ConnectState> {
   Stream<ConnectState> mapEventToState(ConnectionEvent event) async* {
     switch (event) {
       case ConnectionEvent.requestFailed:
-        yield ConnectState.disconnected;
+        yield ConnectState.failure;
         break;
       case ConnectionEvent.reconnect:
         yield ConnectState.connected;

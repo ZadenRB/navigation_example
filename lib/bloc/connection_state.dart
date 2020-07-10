@@ -1,1 +1,1 @@
-enum ConnectState { connectionLoading, connected, disconnected }
+enum ConnectState { connectionLoading, connected, disconnected, failure }
